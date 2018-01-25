@@ -1,10 +1,12 @@
 package scale;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Scale {
 
 	public String weigh(int[] scaleWeights, ArrayList<Integer> weights) {
+		int[] extraWeights = new int[2];
 		int difference;
 		int greaterValueIndex;
 		if(scaleWeights[0]>scaleWeights[1]){
@@ -14,11 +16,16 @@ public class Scale {
 			greaterValueIndex = 1;
 			difference = scaleWeights[1] - scaleWeights[0];
 		}
-		System.out.println(scaleWeights[greaterValueIndex]);
-		System.out.println("The difference is " + difference);
-		//compare scaleWeight elements
-		//assign the greater value to a variable
-		//assign the difference to a variable
+		Collections.sort(weights, Collections.reverseOrder());
+		while(difference > 0){
+			for(int i=0; i<weights.size(); i++){
+				if(difference >= i){
+					extraWeights[i] = weights.get(i);
+					difference -= weights.get(i);
+				}
+			}
+		}
+		System.out.println("\n" + extraWeights[0] + ":" + extraWeights[1]);
 		//return 2 weights
 		//check if any pair of elements of weights equals the difference
 		//if so, return the pair of elements or a single elements

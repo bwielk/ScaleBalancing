@@ -24,6 +24,7 @@ public class ScaleTest {
 	
 	@Test
 	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart1() {
+		System.out.print("\nTest1");
 		scaleWeights[0] = 2;
 		scaleWeights[1] = 10;
 		Collections.addAll(weights, 1,2,3,4,5);
@@ -32,6 +33,7 @@ public class ScaleTest {
 	
 	@Test
 	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart2() {
+		System.out.print("\nTest2");
 		scaleWeights[0] = 5;
 		scaleWeights[1] = 3;
 		Collections.addAll(weights, 1,1,3,4);
@@ -40,6 +42,7 @@ public class ScaleTest {
 	
 	@Test
 	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart3() {
+		System.out.print("\nTest3");
 		scaleWeights[0] = 9;
 		scaleWeights[1] = 1;
 		Collections.addAll(weights, 1,2,3,8);
@@ -48,6 +51,7 @@ public class ScaleTest {
 	
 	@Test
 	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart4() {
+		System.out.print("\nTest4");
 		scaleWeights[0] = 12;
 		scaleWeights[1] = 29;
 		Collections.addAll(weights, 1,11,2);
@@ -56,6 +60,7 @@ public class ScaleTest {
 	
 	@Test
 	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart5() {
+		System.out.print("\nTest5");
 		scaleWeights[0] = 8;
 		scaleWeights[1] = 12;
 		Collections.addAll(weights, 1,1,4);
