@@ -23,10 +23,42 @@ public class ScaleTest {
 	}
 	
 	@Test
-	public void aScaleHolds2WeightsAndMeasuresTheDifference() {
+	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart1() {
 		scaleWeights[0] = 2;
 		scaleWeights[1] = 10;
 		Collections.addAll(weights, 1,2,3,4,5);
-		scale.weigh(scaleWeights, weights);
+		assertEquals("[3,5]", scale.weigh(scaleWeights, weights));
+	}
+	
+	@Test
+	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart2() {
+		scaleWeights[0] = 5;
+		scaleWeights[1] = 3;
+		Collections.addAll(weights, 1,1,3,4);
+		assertEquals("[1,1]", scale.weigh(scaleWeights, weights));
+	}
+	
+	@Test
+	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart3() {
+		scaleWeights[0] = 9;
+		scaleWeights[1] = 1;
+		Collections.addAll(weights, 1,2,3,8);
+		assertEquals("[8]", scale.weigh(scaleWeights, weights));
+	}
+	
+	@Test
+	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart4() {
+		scaleWeights[0] = 2;
+		scaleWeights[1] = 10;
+		Collections.addAll(weights, 1,11,2);
+		assertEquals("Not possible", scale.weigh(scaleWeights, weights));
+	}
+	
+	@Test
+	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart5() {
+		scaleWeights[0] = 8;
+		scaleWeights[1] = 12;
+		Collections.addAll(weights, 1,1,4);
+		assertEquals("[4]", scale.weigh(scaleWeights, weights));
 	}
 }
