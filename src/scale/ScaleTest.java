@@ -48,8 +48,8 @@ public class ScaleTest {
 	
 	@Test
 	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart4() {
-		scaleWeights[0] = 2;
-		scaleWeights[1] = 10;
+		scaleWeights[0] = 12;
+		scaleWeights[1] = 29;
 		Collections.addAll(weights, 1,11,2);
 		assertEquals("Not possible", scale.weigh(scaleWeights, weights));
 	}
