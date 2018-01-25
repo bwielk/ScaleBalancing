@@ -19,13 +19,19 @@ public class Scale {
 		Collections.sort(weights, Collections.reverseOrder());
 		while(difference > 0){
 			for(int i=0; i<weights.size(); i++){
-				if(difference >= i){
+				System.out.print("\nThe difference was " + difference);
+				if(difference == weights.get(i)){
+					extraWeights[i] = weights.get(i);
+					difference -= weights.get(i);
+					System.out.print("\nThe difference is " + difference);
+					return "[" + extraWeights[0] + "]";
+				}else{
 					extraWeights[i] = weights.get(i);
 					difference -= weights.get(i);
 				}
 			}
 		}
-		System.out.println("\n" + extraWeights[0] + ":" + extraWeights[1]);
+		System.out.println("\n " + extraWeights[0] + ":" + extraWeights[1]);
 		//return 2 weights
 		//check if any pair of elements of weights equals the difference
 		//if so, return the pair of elements or a single elements
