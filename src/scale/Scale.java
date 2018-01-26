@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class Scale {
 
-	public String weigh(int[] scaleWeights, ArrayList<Integer> weights) {
+	public String weigh(int[] scaleWeights, ArrayList<Integer> weights, int limitOfExtraWeights) {
 		ArrayList<String> extraWeights = new ArrayList<String>();
 		int difference;
 		if(scaleWeights[0]>scaleWeights[1]){
@@ -15,12 +15,12 @@ public class Scale {
 		}
 		Collections.sort(weights, Collections.reverseOrder());
 			for(int i=0; i<weights.size(); i++){
-				if(weights.get(i) <= difference && extraWeights.size() < 3){
+				if(weights.get(i) <= difference && extraWeights.size() < limitOfExtraWeights + 1){
 					extraWeights.add(String.valueOf(weights.get(i)));
 					difference -= weights.get(i);
 			}
 		}
-		if(extraWeights.size() <= 2){
+		if(extraWeights.size() <= limitOfExtraWeights){
 			return String.join(",", extraWeights);
 		}else{
 			return "Not possible";
