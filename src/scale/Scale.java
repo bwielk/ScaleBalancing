@@ -15,11 +15,11 @@ public class Scale {
 		}
 		Collections.sort(weights, Collections.reverseOrder());
 			for(int i=0; i<weights.size(); i++){
-				if(weights.get(i) <= difference){
+				if(weights.get(i) <= difference && extraWeights.size() < 3){
 					extraWeights.add(String.valueOf(weights.get(i)));
 					difference -= weights.get(i);
 			}
-		}	
+		}
 		if(extraWeights.size() <= 2){
 			return String.join(",", extraWeights);
 		}else{
