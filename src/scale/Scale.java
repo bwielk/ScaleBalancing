@@ -14,16 +14,13 @@ public class Scale {
 			difference = scaleWeights[1] - scaleWeights[0];
 		}
 		Collections.sort(weights, Collections.reverseOrder());
-		int count = 0;
 			for(int i=0; i<weights.size(); i++){
 				if(weights.get(i) <= difference){
 					extraWeights.add(String.valueOf(weights.get(i)));
 					difference -= weights.get(i);
-					count++;
 			}
-		}
-		System.out.println("\n count : " + count);
-		if(count <= 2){
+		}	
+		if(extraWeights.size() <= 2){
 			return String.join(",", extraWeights);
 		}else{
 			return "Not possible";

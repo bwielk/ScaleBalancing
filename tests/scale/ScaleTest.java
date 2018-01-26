@@ -66,4 +66,24 @@ public class ScaleTest {
 		Collections.addAll(weights, 1,1,4);
 		assertEquals("4", scale.weigh(scaleWeights, weights));
 	}
+	
+	@Test
+	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart6() {
+		System.out.print("\nTest6");
+		scaleWeights[0] = 10;
+		scaleWeights[1] = 1;
+		Collections.addAll(weights, 1,1,1,1,1,6);
+		assertEquals("Not possible", scale.weigh(scaleWeights, weights));
+	}
+	
+	@Test
+	public void aScaleHolds2WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart8() {
+		System.out.print("\nTest7");
+		scaleWeights[0] = 99;
+		scaleWeights[1] = 89;
+		Collections.addAll(weights, 5,5,4);
+		assertNotEquals("Not possible", scale.weigh(scaleWeights, weights));
+		assertNotEquals("5,4", scale.weigh(scaleWeights, weights));
+		assertEquals("5,5", scale.weigh(scaleWeights, weights));
+	}
 }
