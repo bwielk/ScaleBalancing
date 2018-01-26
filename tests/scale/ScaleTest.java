@@ -118,4 +118,37 @@ public class ScaleTest {
 		assertNotEquals("48,1", scale.weigh(scaleWeights, weights, 2));
 		assertEquals("Not possible", scale.weigh(scaleWeights, weights, 2));
 	}
+	
+	@Test
+	public void aScaleHolds3WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart1() {
+		System.out.print("\nTest10");
+		scaleWeights[0] = 110;
+		scaleWeights[1] = 101;
+		Collections.addAll(weights, 3,3,3,1,1);
+		assertNotEquals("3,1,1", scale.weigh(scaleWeights, weights, 3));
+		assertNotEquals("Not possible", scale.weigh(scaleWeights, weights, 3));
+		assertEquals("3,3,3", scale.weigh(scaleWeights, weights, 3));
+	}
+	
+	@Test
+	public void aScaleHolds4WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart1() {
+		System.out.print("\nTest11");
+		scaleWeights[0] = 25;
+		scaleWeights[1] = 20;
+		Collections.addAll(weights, 2,1,1,1,1);
+		assertNotEquals("Not possible", scale.weigh(scaleWeights, weights, 4));
+		assertNotEquals("1,1,1,2", scale.weigh(scaleWeights, weights, 4));
+		assertEquals("2,1,1,1", scale.weigh(scaleWeights, weights, 4));
+	}
+	
+	@Test
+	public void aScaleHolds5WeightsAndMeasuresTheDifferenceAndFindsExtraWeightsPart1() {
+		System.out.print("\nTest12");
+		scaleWeights[0] = 12;
+		scaleWeights[1] = 1;
+		Collections.addAll(weights, 6,3,2,1,1,1,1);
+		assertNotEquals("1,1,1,2,6", scale.weigh(scaleWeights, weights, 5));
+		assertNotEquals("Not possible", scale.weigh(scaleWeights, weights, 5));
+		assertEquals("6,3,2", scale.weigh(scaleWeights, weights, 5));
+	}
 }
